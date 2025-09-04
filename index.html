@@ -100,7 +100,11 @@
         padding-top: 68px;   /* 상단 여백은 유지/원하면 조절 */
         padding-bottom: 40px;
       }
-
+      /* 메뉴가 왼쪽으로 들러붙지 않도록 보조 (선택) */
+      header nav ul{
+        padding-left: 0;         /* 혹시 남아있는 기본 패딩 제거 */
+        margin-left: 0;
+      }
       /* 나머지는 그대로 두셔도 됩니다 */
       .hero h2{
         font-size: clamp(22px, 6.2vw, 32px);
