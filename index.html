@@ -82,15 +82,34 @@
 
     /* === 모바일 최적화 === */
     @media (max-width: 640px) {
-      .nav{ height:auto; padding:8px 0; flex-direction:column; align-items:flex-start; gap:8px; }
+      /* 좌우 여백을 늘리고, 노치(Safe Area)까지 고려 */
+      .container{
+        padding-left: calc(24px + env(safe-area-inset-left));
+        padding-right: calc(24px + env(safe-area-inset-right));
+      }
+
+      .nav{
+        height:auto; padding:10px 0;
+        flex-direction:column; align-items:flex-start; gap:8px;
+      }
       .brand img{ height:40px; }
       .brand h1{ font-size:16px; }
+
       nav ul{ flex-wrap:wrap; gap:8px 12px; }
       nav a{ padding:6px 8px; font-size:14px; }
-      .hero{ padding:48px 0 32px; }
-      .hero h2{ font-size:clamp(22px, 6vw, 32px); line-height:1.25; }
+
+      /* 히어로 영역: 상단/하단 여백 확대 */
+      .hero{ padding:64px 0 40px; }              /* ↑ 윗부분 여백 넉넉하게 */
+      .hero h2{
+        font-size: clamp(22px, 6.2vw, 32px);
+        line-height: 1.28;
+        word-break: keep-all;                    /* 단어 중간 줄바꿈 방지 */
+      }
       .hero p{ font-size:15px; }
-    }
+
+      /* 버튼 주변 간격 약간 여유 */
+      .hero .cta{ gap:14px; }
+    }  
     @media (min-width:600px) and (max-width:899px){ .grid.cols-3{ grid-template-columns: repeat(2, 1fr); } }
     html, body { overflow-x: hidden; }
   </style>
