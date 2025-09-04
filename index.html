@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://haegangeng.github.io/" />
   <meta name="description" content="(주)해강엔지니어링 — 하천기본계획, 하천환경정비사업 실시설계, 재해영향평가, 자연재해저감종합계획, 비상대처계획수립" />
 
-  <!-- Open Graph / KakaoTalk, Facebook 등 -->
+  <!-- Open Graph -->
   <meta property="og:site_name" content="(주)해강엔지니어링" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:title" content="(주)해강엔지니어링" />
@@ -37,81 +37,102 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{ --bg:#ffffff; --text:#101320; --muted:#5d6470; --primary:#0b5cff; --primary-2:#083db3; --card:#f6f8ff; --line:#e8ecf8 }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Arial,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:var(--text);background:var(--bg)}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    :root{
+      --bg:#ffffff; --text:#101320; --muted:#5d6470;
+      --primary:#0b5cff; --primary-2:#083db3;
+      --card:#f6f8ff; --line:#e8ecf8
+    }
+
+    *{ box-sizing:border-box }
+    html,body{
+      margin:0; padding:0;
+      font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Arial,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+      color:var(--text); background:var(--bg)
+    }
+    a{ color:inherit; text-decoration:none }
+    .container{ max-width:1100px; margin:0 auto; padding:0 20px }
 
     header{
-      position:sticky; top:0; backdrop-filter:saturate(150%) blur(8px);
-      /* fallback for browsers without color-mix */
-      background: rgba(255,255,255,.85);
-      /* supported browsers will use this */
+      position:sticky; top:0; z-index:50;
+      border-bottom:1px solid var(--line);
+      /* fallback */
+      background:rgba(255,255,255,.85);
+      /* supported browsers */
       background: color-mix(in oklab, white 70%, transparent);
-      border-bottom:1px solid var(--line); z-index:50
+      backdrop-filter:saturate(150%) blur(8px);
     }
-    .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand img{height:60px;width:auto}
-    .brand h1{font-size:20px;margin:0;font-weight:700}
-    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    nav a{padding:8px 10px;border-radius:10px;font-weight:500}
-    nav a:hover{background:var(--card)}
+    .nav{ display:flex; align-items:center; justify-content:space-between; height:72px }
+    .brand{ display:flex; gap:12px; align-items:center }
+    .brand img{ height:60px; width:auto }
+    .brand h1{ font-size:20px; margin:0; font-weight:700 }
+    nav ul{ display:flex; gap:18px; list-style:none; margin:0; padding:0 }
+    nav a{ padding:8px 10px; border-radius:10px; font-weight:500 }
+    nav a:hover{ background:var(--card) }
 
-    .hero{padding:72px 0 56px}
-    .hero h2{font-size:40px;line-height:1.15;margin:0 0 16px}
-    .hero p{color:var(--muted);font-size:18px;margin:0 0 28px}
-    .hero .cta{display:flex;gap:12px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:#fff;font-weight:600}
-    .btn.primary{background:var(--primary);border-color:var(--primary);color:#fff}
+    .hero{ padding:72px 0 56px }
+    .hero h2{ font-size:40px; line-height:1.15; margin:0 0 16px; word-break:keep-all }
+    .hero p{ color:var(--muted); font-size:18px; margin:0 0 28px }
+    .hero .cta{ display:flex; gap:12px }
+    .btn{ display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:14px; border:1px solid var(--line); background:#fff; font-weight:600 }
+    .btn.primary{ background:var(--primary); border-color:var(--primary); color:#fff }
 
-    section{scroll-margin-top:80px}
-    .section{padding:64px 0;border-top:1px solid var(--line)}
-    .grid{display:grid;gap:18px}
-    @media(min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
-    .card h3{margin:0 0 8px;font-size:18px}
-    .card p{margin:0;color:var(--muted)}
-    .pill{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted);margin-right:6px}
-    footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted)}
-    .mini{font-size:13px}
-    .shadow{box-shadow:0 12px 30px rgba(0,12,120,.08)}
-    .spacer-1 { height: 12px; }
-    .spacer-2 { height: 24px; }
+    section{ scroll-margin-top:80px }
+    .section{ padding:64px 0; border-top:1px solid var(--line) }
+    .grid{ display:grid; gap:18px }
+    @media (min-width:900px){ .grid.cols-3{ grid-template-columns:repeat(3,1fr) } }
 
-    /* === 모바일 최적화 === */
-    @media (max-width: 640px) {
-      /* 좌우 여백을 늘리고, 노치(Safe Area)까지 고려 */
+    .card{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px }
+    .card h3{ margin:0 0 8px; font-size:18px }
+    .card p{ margin:0; color:var(--muted) }
+
+    .pill{ display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; background:#fff; border:1px solid var(--line); color:var(--muted); margin-right:6px }
+
+    footer{ padding:36px 0; border-top:1px solid var(--line); color:var(--muted) }
+    .mini{ font-size:13px }
+    .shadow{ box-shadow:0 12px 30px rgba(0,12,120,.08) }
+    .spacer-1{ height:12px } .spacer-2{ height:24px }
+
+    /* === 모바일(≤640px) 여백/가독성 보강 === */
+    @media (max-width:640px){
+      /* 컨테이너 좌우 여백 확대 + 노치 대응 */
       .container{
-        padding-left: calc(24px + env(safe-area-inset-left));
-        padding-right: calc(24px + env(safe-area-inset-right));
+        padding-left:  calc(clamp(28px, 7vw, 44px) + env(safe-area-inset-left));
+        padding-right: calc(clamp(28px, 7vw, 44px) + env(safe-area-inset-right));
       }
+      .nav{ height:auto; padding:10px 0; flex-direction:column; align-items:flex-start; gap:8px }
+      .brand img{ height:40px } .brand h1{ font-size:16px }
 
-      .nav{
-        height:auto; padding:10px 0;
-        flex-direction:column; align-items:flex-start; gap:8px;
+      nav ul{ flex-wrap:wrap; gap:8px 12px }
+      nav a{ padding:6px 8px; font-size:14px }
+
+      /* 히어로 좌우/상단 여백 추가 */
+      .hero.container{
+        padding-left:  calc(clamp(32px, 8vw, 52px) + env(safe-area-inset-left));
+        padding-right: calc(clamp(32px, 8vw, 52px) + env(safe-area-inset-right));
+        padding-top:68px; padding-bottom:40px;
       }
-      .brand img{ height:40px; }
-      .brand h1{ font-size:16px; }
-
-      nav ul{ flex-wrap:wrap; gap:8px 12px; }
-      nav a{ padding:6px 8px; font-size:14px; }
-
-      /* 히어로 영역: 상단/하단 여백 확대 */
-      .hero{ padding:64px 0 40px; }              /* ↑ 윗부분 여백 넉넉하게 */
       .hero h2{
-        font-size: clamp(22px, 6.2vw, 32px);
-        line-height: 1.28;
-        word-break: keep-all;                    /* 단어 중간 줄바꿈 방지 */
+        font-size:clamp(22px, 6.2vw, 32px);
+        line-height:1.28; word-break:keep-all;
+        max-width:22ch; /* 제목 줄 길이 제한 */
       }
-      .hero p{ font-size:15px; }
+      .hero p{ font-size:15px; max-width:36ch; margin-top:10px }
+      .hero .cta{ gap:14px }
+      .btn{ padding:14px 18px } /* 터치 타깃 확대 */
+    }
 
-      /* 버튼 주변 간격 약간 여유 */
-      .hero .cta{ gap:14px; }
-    }  
-    @media (min-width:600px) and (max-width:899px){ .grid.cols-3{ grid-template-columns: repeat(2, 1fr); } }
-    html, body { overflow-x: hidden; }
+    /* 초소형(≤380px): 버튼 세로 쌓기 */
+    @media (max-width:380px){
+      .hero .cta{ flex-direction:column }
+      .hero .cta .btn{ width:100%; justify-content:center }
+    }
+
+    /* 태블릿 좁은 폭(600~899px): 카드 2열 */
+    @media (min-width:600px) and (max-width:899px){
+      .grid.cols-3{ grid-template-columns:repeat(2,1fr) }
+    }
+
+    html,body{ overflow-x:hidden }
   </style>
 </head>
 <body>
