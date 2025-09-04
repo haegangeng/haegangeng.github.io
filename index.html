@@ -4,10 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>(주)해강엔지니어링 | 하천분야·방재분야 전문 엔지니어링</title>
+
   <link rel="canonical" href="https://haegangeng.github.io/" />
   <meta name="description" content="(주)해강엔지니어링 — 하천기본계획, 하천환경정비사업 실시설계, 재해영향평가, 자연재해저감종합계획, 비상대처계획수립" />
 
-  <!-- Open Graph / KakaoTalk, Facebook, etc. -->
+  <!-- Open Graph / KakaoTalk, Facebook 등 -->
+  <meta property="og:site_name" content="(주)해강엔지니어링" />
+  <meta property="og:locale" content="ko_KR" />
   <meta property="og:title" content="(주)해강엔지니어링" />
   <meta property="og:description" content="하천분야·방재분야 전문 엔지니어링" />
   <meta property="og:type" content="website" />
@@ -17,13 +20,17 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/jpeg" />
 
-  <!-- Twitter Card (일부 메신저/앱에서 사용) -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="(주)해강엔지니어링" />
   <meta name="twitter:description" content="하천분야·방재분야 전문 엔지니어링" />
   <meta name="twitter:image" content="https://haegangeng.github.io/assets/og-haegang-1200x630.jpg" />
 
   <meta name="theme-color" content="#0b5cff" />
+
+  <!-- (선택) 파비콘/앱 아이콘 -->
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -187,11 +194,11 @@
       <div class="container">
         <h2>문의하기</h2>
         <div class="card">
-          <p class="mini">(주)해강엔지니어링 대표이사 박상순</p>
-          <div class="spacer-1" aria-hidden="true"></div>
-          <p class="mini">본사 : 경기도 의왕시 광진말로 54, 의왕스마트시티퀀텀 제10층 제A1007</p>
-          <div class="spacer-1" aria-hidden="true"></div>
-          <p class="mini">관리자이메일: <a href="mailto:bycho@kakao.com">bycho@kakao.com</a></p>
+          <address class="mini" style="font-style:normal">
+            (주)해강엔지니어링 대표이사 박상순<br>
+            본사 : 경기도 의왕시 광진말로 54, 의왕스마트시티퀀텀 제10층 제A1007<br>
+            관리자이메일: <a href="mailto:bycho@kakao.com">bycho@kakao.com</a>
+          </address>
         </div>
       </div>
     </section>
@@ -209,11 +216,12 @@
   <script>
     // 푸터 연도 자동 갱신
     document.getElementById('yy').textContent = new Date().getFullYear();
+
     // 부드러운 스크롤
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
-        const id=a.getAttribute('href');
-        const el=document.querySelector(id);
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
         if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
       });
     });
