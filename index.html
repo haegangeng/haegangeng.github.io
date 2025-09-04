@@ -19,7 +19,14 @@
     html,body{margin:0;padding:0;font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--text);background:var(--bg)}
     a{color:inherit;text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;backdrop-filter:saturate(150%) blur(8px);background:color-mix(in oklab, white 70%, transparent);border-bottom:1px solid var(--line);z-index:50}
+    header{
+      position:sticky;top:0;backdrop-filter:saturate(150%) blur(8px);
+      /* fallback for browsers without color-mix */
+      background: rgba(255,255,255,.85);
+      /* supported browsers will use this */
+      background: color-mix(in oklab, white 70%, transparent);
+      border-bottom:1px solid var(--line);z-index:50
+    }
     .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
     .brand{display:flex;gap:12px;align-items:center}
     .brand img{height:60px;width:auto}
@@ -44,8 +51,33 @@
     footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted)}
     .mini{font-size:13px}
     .shadow{box-shadow:0 12px 30px rgba(0,12,120,.08)}
-    .spacer-1 { height: 12px; }  /* 1줄 정도 */
-    .spacer-2 { height: 24px; }  /* 2줄 정도 */
+    .spacer-1 { height: 12px; }
+    .spacer-2 { height: 24px; }
+
+    /* === 모바일 최적화 패치 === */
+    @media (max-width: 640px) {
+      .nav{
+        height:auto; padding:8px 0;
+        flex-direction:column; align-items:flex-start; gap:8px;
+      }
+      .brand img{ height:40px; }
+      .brand h1{ font-size:16px; }
+
+      nav ul{ flex-wrap:wrap; gap:8px 12px; }
+      nav a{ padding:6px 8px; font-size:14px; }
+
+      .hero{ padding:48px 0 32px; }
+      .hero h2{ font-size:clamp(22px, 6vw, 32px); line-height:1.25; }
+      .hero p{ font-size:15px; }
+    }
+
+    /* 태블릿에서 카드 2열 */
+    @media (min-width:600px) and (max-width:899px){
+      .grid.cols-3{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* 가로 스크롤 방지 */
+    html, body { overflow-x: hidden; }
   </style>
 </head>
 <body>
@@ -94,7 +126,7 @@
         <div class="grid cols-3" style="margin-top:14px">
           <article class="card">
             <h3>하천기본계획</h3>
-            <p>유역 분석, 홍수량 및 홍수위 산정, 하천의 정비·보전 계획 수립등을 통합적으로 수행합니다.</p>
+            <p>유역 분석, 홍수량 및 홍수위 산정, 하천의 정비·보전 계획 수립 등을 통합적으로 수행합니다.</p>
           </article>
           <article class="card">
             <h3>하천환경정비 실시설계</h3>
@@ -125,7 +157,7 @@
         <h2>기술연구</h2>
         <div class="card">
           <h3>R&D 방향</h3>
-          <p>HEC-RAS/HEC-HMS 기반 수리·수문 모델링 고도화, 레이더강우·KMA API 활용, Kriging/머신러닝 기반 위험도 지도화 등 내부 기술자산을 연구·개발하고 있습니다.</p>          
+          <p>HEC-RAS/HEC-HMS 기반 수리·수문 모델링 고도화, 레이더강우·KMA API 활용, Kriging/머신러닝 기반 위험도 지도화 등 내부 기술자산을 연구·개발하고 있습니다.</p>
         </div>
       </div>
     </section>
@@ -136,7 +168,7 @@
         <div class="card">
           <p>하천·방재 분야의 문제를 해결할 신입/경력 임직원을 모집합니다. 채용 공고는 본 페이지에서 수시 업데이트됩니다.</p>
           <ul>
-            <li class="mini">모집 분야: 수자원분야 - 경력직 ○명(직급무관), 신입사원 ○명, </li>
+            <li class="mini">모집 분야: 수자원분야 — 경력직 ○명(직급무관), 신입사원 ○명</li>
             <li class="mini">지원 방법: 이력서·포트폴리오 이메일 제출(haegang2022@kakao.com)</li>
           </ul>
         </div>
@@ -148,9 +180,9 @@
         <h2>문의하기</h2>
         <div class="card">
           <p class="mini">관리자이메일: <a href="mailto:bycho@kakao.com">bycho@kakao.com</a> · 깃허브: <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></p>
-          <div class="spacer-1" aria-hidden="true"></div>  <!-- ← 한 줄 빈칸 -->
+          <div class="spacer-1" aria-hidden="true"></div>
           <p class="mini">(주)해강엔지니어링 대표이사 박상순</p>
-          <div class="spacer-1" aria-hidden="true"></div>  <!-- ← 한 줄 빈칸 -->
+          <div class="spacer-1" aria-hidden="true"></div>
           <p class="mini">본사 : 경기도 의왕시 광진말로 54, 의왕스마트시티퀀텀 제10층 제A1007</p>
         </div>
       </div>
@@ -167,7 +199,10 @@
   </footer>
 
   <script>
+    // 푸터 연도 자동 갱신
     document.getElementById('yy').textContent = new Date().getFullYear();
+
+    // 부드러운 스크롤
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id=a.getAttribute('href');
