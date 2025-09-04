@@ -4,28 +4,45 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>(주)해강엔지니어링 | 하천분야·방재분야 전문 엔지니어링</title>
+  <link rel="canonical" href="https://haegangeng.github.io/" />
   <meta name="description" content="(주)해강엔지니어링 — 하천기본계획, 하천환경정비사업 실시설계, 재해영향평가, 자연재해저감종합계획, 비상대처계획수립" />
+
+  <!-- Open Graph / KakaoTalk, Facebook, etc. -->
   <meta property="og:title" content="(주)해강엔지니어링" />
   <meta property="og:description" content="하천분야·방재분야 전문 엔지니어링" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/haegang-logo.png" />
+  <meta property="og:url" content="https://haegangeng.github.io/" />
+  <meta property="og:image" content="https://haegangeng.github.io/assets/og-haegang-1200x630.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+
+  <!-- Twitter Card (일부 메신저/앱에서 사용) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="(주)해강엔지니어링" />
+  <meta name="twitter:description" content="하천분야·방재분야 전문 엔지니어링" />
+  <meta name="twitter:image" content="https://haegangeng.github.io/assets/og-haegang-1200x630.jpg" />
+
   <meta name="theme-color" content="#0b5cff" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
   <style>
     :root{ --bg:#ffffff; --text:#101320; --muted:#5d6470; --primary:#0b5cff; --primary-2:#083db3; --card:#f6f8ff; --line:#e8ecf8 }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--text);background:var(--bg)}
+    html,body{margin:0;padding:0;font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Arial,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:var(--text);background:var(--bg)}
     a{color:inherit;text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
+
     header{
-      position:sticky;top:0;backdrop-filter:saturate(150%) blur(8px);
+      position:sticky; top:0; backdrop-filter:saturate(150%) blur(8px);
       /* fallback for browsers without color-mix */
       background: rgba(255,255,255,.85);
       /* supported browsers will use this */
       background: color-mix(in oklab, white 70%, transparent);
-      border-bottom:1px solid var(--line);z-index:50
+      border-bottom:1px solid var(--line); z-index:50
     }
     .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
     .brand{display:flex;gap:12px;align-items:center}
@@ -34,12 +51,14 @@
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
     nav a{padding:8px 10px;border-radius:10px;font-weight:500}
     nav a:hover{background:var(--card)}
+
     .hero{padding:72px 0 56px}
     .hero h2{font-size:40px;line-height:1.15;margin:0 0 16px}
     .hero p{color:var(--muted);font-size:18px;margin:0 0 28px}
     .hero .cta{display:flex;gap:12px}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:#fff;font-weight:600}
     .btn.primary{background:var(--primary);border-color:var(--primary);color:#fff}
+
     section{scroll-margin-top:80px}
     .section{padding:64px 0;border-top:1px solid var(--line)}
     .grid{display:grid;gap:18px}
@@ -54,29 +73,18 @@
     .spacer-1 { height: 12px; }
     .spacer-2 { height: 24px; }
 
-    /* === 모바일 최적화 패치 === */
+    /* === 모바일 최적화 === */
     @media (max-width: 640px) {
-      .nav{
-        height:auto; padding:8px 0;
-        flex-direction:column; align-items:flex-start; gap:8px;
-      }
+      .nav{ height:auto; padding:8px 0; flex-direction:column; align-items:flex-start; gap:8px; }
       .brand img{ height:40px; }
       .brand h1{ font-size:16px; }
-
       nav ul{ flex-wrap:wrap; gap:8px 12px; }
       nav a{ padding:6px 8px; font-size:14px; }
-
       .hero{ padding:48px 0 32px; }
       .hero h2{ font-size:clamp(22px, 6vw, 32px); line-height:1.25; }
       .hero p{ font-size:15px; }
     }
-
-    /* 태블릿에서 카드 2열 */
-    @media (min-width:600px) and (max-width:899px){
-      .grid.cols-3{ grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* 가로 스크롤 방지 */
+    @media (min-width:600px) and (max-width:899px){ .grid.cols-3{ grid-template-columns: repeat(2, 1fr); } }
     html, body { overflow-x: hidden; }
   </style>
 </head>
@@ -201,9 +209,8 @@
   <script>
     // 푸터 연도 자동 갱신
     document.getElementById('yy').textContent = new Date().getFullYear();
-
     // 부드러운 스크롤
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    document.querySelectorAll('a[href^='#']").forEach(a=>{
       a.addEventListener('click', e=>{
         const id=a.getAttribute('href');
         const el=document.querySelector(id);
