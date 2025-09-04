@@ -55,9 +55,7 @@
     header{
       position:sticky; top:0; z-index:50;
       border-bottom:1px solid var(--line);
-      /* fallback */
       background:rgba(255,255,255,.85);
-      /* supported browsers */
       background: color-mix(in oklab, white 70%, transparent);
       backdrop-filter:saturate(150%) blur(8px);
     }
@@ -92,29 +90,36 @@
     .shadow{ box-shadow:0 12px 30px rgba(0,12,120,.08) }
     .spacer-1{ height:12px } .spacer-2{ height:24px }
 
-    @media (max-width: 640px) {
-      /* 기존 hero.container 좌우 패딩 줄이고, 아래 섹션과 동일하게 정렬 */
+    /* === 모바일(≤640px) 여백/가독성 보강 === */
+    @media (max-width:640px){
+      /* 헤더/본문/히어로 좌우를 동일한 선으로 정렬 */
+      header .container{
+        padding-left:  calc(clamp(28px, 7vw, 44px) + env(safe-area-inset-left));
+        padding-right: calc(clamp(28px, 7vw, 44px) + env(safe-area-inset-right));
+      }
+      .container{
+        padding-left:  calc(clamp(28px, 7vw, 44px) + env(safe-area-inset-left));
+        padding-right: calc(clamp(28px, 7vw, 44px) + env(safe-area-inset-right));
+      }
+
+      .nav{ height:auto; padding:10px 0; flex-direction:column; align-items:flex-start; gap:8px }
+      .brand img{ height:40px } .brand h1{ font-size:16px }
+      nav ul{ flex-wrap:wrap; gap:8px 12px }
+
+      /* 히어로: 상단 여백만 유지, 좌우는 본문과 동일 값 */
       .hero.container{
-        padding-left:  calc(clamp(28px, 7vw, 40px) + env(safe-area-inset-left));
-        padding-right: calc(clamp(28px, 7vw, 40px) + env(safe-area-inset-right));
-        padding-top: 68px;   /* 상단 여백은 유지/원하면 조절 */
-        padding-bottom: 40px;
+        padding-left:  calc(clamp(28px, 7vw, 44px) + env(safe-area-inset-left));
+        padding-right: calc(clamp(28px, 7vw, 44px) + env(safe-area-inset-right));
+        padding-top:68px; padding-bottom:40px;
       }
-      /* 메뉴가 왼쪽으로 들러붙지 않도록 보조 (선택) */
-      header nav ul{
-        padding-left: 0;         /* 혹시 남아있는 기본 패딩 제거 */
-        margin-left: 0;
-      }
-      /* 나머지는 그대로 두셔도 됩니다 */
       .hero h2{
-        font-size: clamp(22px, 6.2vw, 32px);
-        line-height: 1.28;
-        word-break: keep-all;
-        max-width: 22ch;
+        font-size:clamp(22px, 6.2vw, 32px);
+        line-height:1.28; word-break:keep-all;
+        max-width:22ch;
       }
-      .hero p{ font-size: 15px; max-width: 36ch; margin-top: 10px; }
-      .hero .cta{ gap: 14px; }
-      .btn{ padding: 14px 18px; }
+      .hero p{ font-size:15px; max-width:36ch; margin-top:10px }
+      .hero .cta{ gap:14px }
+      .btn{ padding:14px 18px }
     }
 
     /* 초소형(≤380px): 버튼 세로 쌓기 */
