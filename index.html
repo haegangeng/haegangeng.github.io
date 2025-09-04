@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>(주)해강엔지니어링 | 하천·방재 전문 엔지니어링</title>
+  <meta name="description" content="(주)해강엔지니어링 — 하천기본계획, 하천환경정비사업 실시설계, 재해영향평가, 자연재해저감종합계획, 비상대처계획수립" />
+  <meta property="og:title" content="(주)해강엔지니어링" />
+  <meta property="og:description" content="하천·방재 전문 엔지니어링" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta name="theme-color" content="#0b5cff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;--text:#101320;--muted:#5d6470;--primary:#0b5cff;--primary-2:#083db3;--card:#f6f8ff;--line:#e8ecf8
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--text);background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;backdrop-filter:saturate(150%) blur(8px);background:color-mix(in oklab, white 70%, transparent);border-bottom:1px solid var(--line);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:0 6px 16px rgba(11,92,255,.35)}
+    .brand h1{font-size:18px;margin:0;font-weight:700}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{padding:8px 10px;border-radius:10px;font-weight:500}
+    nav a:hover{background:var(--card)}
+    .hero{padding:72px 0 56px}
+    .hero h2{font-size:40px;line-height:1.15;margin:0 0 16px}
+    .hero p{color:var(--muted);font-size:18px;margin:0 0 28px}
+    .hero .cta{display:flex;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:#fff;font-weight:600}
+    .btn.primary{background:var(--primary);border-color:var(--primary);color:#fff}
+    section{scroll-margin-top:80px}
+    .section{padding:64px 0;border-top:1px solid var(--line)}
+    .grid{display:grid;gap:18px}
+    @media(min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+    .pill{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted);margin-right:6px}
+    footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted)}
+    .mini{font-size:13px}
+    .shadow{box-shadow:0 12px 30px rgba(0,12,120,.08)}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;background:#111;color:#e2e8f0;border-radius:10px;padding:2px 8px;font-size:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>(주)해강엔지니어링</h1>
+      </div>
+      <nav aria-label="주 메뉴">
+        <ul>
+          <li><a href="#about">회사소개</a></li>
+          <li><a href="#services">사업분야</a></li>
+          <li><a href="#rnd">기술연구</a></li>
+          <li><a href="#careers">인재채용</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <h2>하천·방재 분야의 <span style="color:var(--primary)">정확한 해석</span>과 <span style="color:var(--primary)">실행 가능한 설계</span></h2>
+      <p>하천기본계획에서 재해영향평가까지 — 데이터 기반 해석과 현장성 있는 솔루션으로 안전한 수공간을 만듭니다.</p>
+      <div class="cta">
+        <a class="btn primary shadow" href="#services">사업분야 보기</a>
+        <a class="btn" href="#contact">문의하기</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>회사소개</h2>
+        <p class="mini">(주)해강엔지니어링은 하천 및 방재 전문 엔지니어링 기업으로서, 과학적 분석과 축적된 실무 경험을 바탕으로 공공과 민간의 다양한 프로젝트를 수행합니다.</p>
+        <div class="card" style="margin-top:14px">
+          <span class="pill">하천분야</span>
+          <span class="pill">방재분야</span>
+          <p style="margin-top:10px;color:var(--muted)">주요 서비스: 하천기본계획, 하천환경정비사업 실시설계, 재해영향평가, 자연재해저감종합계획, 비상대처계획수립</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2>사업분야</h2>
+        <div class="grid cols-3" style="margin-top:14px">
+          <article class="card">
+            <h3>하천기본계획</h3>
+            <p>유역 분석, 홍수위 산정, 정비·보전 계획 수립을 통합적으로 수행합니다.</p>
+          </article>
+          <article class="card">
+            <h3>하천환경정비 실시설계</h3>
+            <p>수리·수문 해석 기반의 친수·생태·치수 기능을 고려한 실시설계를 제공합니다.</p>
+          </article>
+          <article class="card">
+            <h3>재해영향평가</h3>
+            <p>개발사업으로 인한 재해 유발 요인을 정량 분석하고 저감 대책을 제시합니다.</p>
+          </article>
+          <article class="card">
+            <h3>자연재해저감종합계획</h3>
+            <p>지역 재해 위험도를 분석하여 구조·비구조적 대책을 로드맵으로 제시합니다.</p>
+          </article>
+          <article class="card">
+            <h3>비상대처계획 수립</h3>
+            <p>위기 시나리오별 대응 체계를 구축하고 훈련·점검 프로세스를 설계합니다.</p>
+          </article>
+          <article class="card">
+            <h3>기타 컨설팅</h3>
+            <p>수리·수문 모델링, GIS/원격탐사 기반 분석, 데이터 파이프라인 구축 등.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="rnd" class="section">
+      <div class="container">
+        <h2>기술연구</h2>
+        <div class="card">
+          <h3>R&D 방향</h3>
+          <p>HEC-RAS/HEC-HMS 기반 수리·수문 모델링 고도화, 레이더강우·KMA API 활용, Kriging/머신러닝 기반 위험도 지도화, Surfer 정합 엔지니어링 등 내부 기술자산을 연구·개발하고 있습니다.</p>
+          <p class="mini" style="margin-top:8px">※ 사례·논문·특허 등은 GitHub Pages의 하위 페이지로 확장 가능합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="careers" class="section">
+      <div class="container">
+        <h2>인재채용</h2>
+        <div class="card">
+          <p>하천·방재 분야의 문제를 데이터로 해결할 동료를 찾습니다. 채용 공고는 본 페이지에서 수시 업데이트됩니다.</p>
+          <ul>
+            <li class="mini">모집 분야(예): 수문·수리 해석, 도면/설계, GIS/RS, 데이터엔지니어링</li>
+            <li class="mini">지원 방법: 이력서·포트폴리오 이메일 제출</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>문의하기</h2>
+        <div class="card">
+          <p class="mini">이메일: <a href="mailto:bycho@kakao.com">bycho@kakao.com</a> · 깃허브: <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></p>
+          <p class="mini">주소/전화/사업자정보는 공개 범위에 맞춰 추후 업데이트하세요.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <span class="mini">© <span id="yy"></span> Haegang Engineering Co., Ltd. All rights reserved.</span>
+        <span class="mini">사업자정보 · 개인정보처리방침(예정)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 연도 자동 업데이트
+    document.getElementById('yy').textContent = new Date().getFullYear();
+    // 부드러운 스크롤 (GitHub Pages에서도 동작)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{ const id=a.getAttribute('href'); const el=document.querySelector(id); if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); } });
+    });
+  </script>
+</body>
+</html>
