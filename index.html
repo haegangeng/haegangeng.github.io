@@ -65,20 +65,22 @@
     .brand img{ height:60px; width:auto }
     .brand h1{ font-size:20px; margin:0; font-weight:700; letter-spacing:-0.2px }
     nav ul{ display:flex; gap:18px; list-style:none; margin:0; padding:0 }
-    nav a{ padding:8px 10px; border-radius:10px; font-weight:500 }
+    nav a{
+      padding:8px 10px; border-radius:10px; font-weight:500;
+      display:inline-flex; align-items:center; min-height:36px;  /* 터치 타깃 ↑ */
+    }
     nav a:hover{ background:var(--card) }
 
     /* 히어로 */
     .hero{
       padding:84px 0 60px;
-      background:
-        radial-gradient(1200px 400px at 20% -10%, #eaf0ff 0%, #fff 60%) no-repeat;
+      background: radial-gradient(1200px 400px at 20% -10%, #eaf0ff 0%, #fff 60%) no-repeat;
       border-bottom:1px solid var(--line);
     }
     .hero h2{
       font-size:clamp(32px, 4.2vw, 44px);
       line-height:1.15; margin:0 0 16px; word-break:keep-all;
-      letter-spacing:-0.3px;
+      letter-spacing:-0.3px; text-wrap:balance; /* 균형 줄바꿈 */
     }
     .hero p{ color:var(--muted); font-size:18px; margin:0 0 30px; max-width:48ch }
     .hero .cta{ display:flex; gap:12px; flex-wrap:wrap }
@@ -92,8 +94,8 @@
       background:var(--primary); border-color:var(--primary); color:#fff;
       box-shadow:0 6px 18px rgba(11,92,255,.18);
     }
-    .btn:hover{ filter:brightness(1.02) }
-    .btn:active{ transform:translateY(1px) }
+    .btn:hover{ filter:brightness(1.02); box-shadow:0 10px 26px rgba(11,92,255,.20); }
+    .btn:active{ transform:translateY(1px) scale(.997); }
 
     /* 섹션/카드 */
     section{ scroll-margin-top:80px }
@@ -120,12 +122,19 @@
     }
 
     footer{ padding:40px 0; border-top:1px solid var(--line); color:var(--muted) }
-    .mini{ font-size:13px }
-    .emoji{font-size:1.05em;vertical-align:-0.15em;margin-right:.35em}
+    .mini{ font-size:13px; line-height:1.6 }  /* 행간 보강 */
+    .emoji{ font-size:1.05em; vertical-align:-0.15em; margin-right:.35em }
+
+    /* 포커스 접근성 */
+    a:focus-visible, button:focus-visible{
+      outline:2px solid var(--primary);
+      outline-offset:2px;
+      border-radius:12px;
+    }
 
     /* ===== 모바일(≤640px) ===== */
     @media (max-width:640px){
-      /* 좌우 정렬을 모든 영역에서 동일화 */
+      /* 좌우 정렬을 모든 영역에서 동일화 (요청하신 여백 값 유지: 24~32px) */
       header .container{
         padding-left:  calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-left));
         padding-right: calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-right));
@@ -148,10 +157,10 @@
       }
       header nav a{
         white-space:nowrap; word-break:keep-all;
-        padding:6px 0; display:inline-block;
+        padding:6px 0; display:inline-flex;
       }
 
-      /* 히어로는 본문과 동일 좌우, 상하 여백만 살짝 */
+      /* 히어로는 본문과 동일 좌우, 상하 여백(68/44) 유지 */
       .hero.container{
         padding-left:  calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-left));
         padding-right: calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-right));
