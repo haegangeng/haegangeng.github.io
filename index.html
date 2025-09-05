@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>(주)해강엔지니어링 | 수자원분야·방재분야 전문 엔지니어링</title>
+  <title>(주)해강엔지니어링 | 수자원·방재 전문 엔지니어링</title>
 
   <link rel="canonical" href="https://haegangeng.github.io/" />
   <meta name="description" content="(주)해강엔지니어링 — 하천기본계획, 하천환경정비사업 실시설계, 재해영향평가, 자연재해저감종합계획, 비상대처계획수립" />
@@ -12,7 +12,7 @@
   <meta property="og:site_name" content="(주)해강엔지니어링" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:title" content="(주)해강엔지니어링" />
-  <meta property="og:description" content="수자원분야·방재분야 전문 엔지니어링" />
+  <meta property="og:description" content="수자원·방재 전문 엔지니어링" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://haegangeng.github.io/" />
   <meta property="og:image" content="https://haegangeng.github.io/assets/og-haegang-1200x630.jpg" />
@@ -23,12 +23,10 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="(주)해강엔지니어링" />
-  <meta name="twitter:description" content="수자원분야·방재분야 전문 엔지니어링" />
+  <meta name="twitter:description" content="수자원·방재 전문 엔지니어링" />
   <meta name="twitter:image" content="https://haegangeng.github.io/assets/og-haegang-1200x630.jpg" />
 
   <meta name="theme-color" content="#0b5cff" />
-
-  <!-- (선택) 파비콘/앱 아이콘 -->
   <link rel="icon" href="assets/favicon.ico">
   <link rel="apple-touch-icon" href="assets/icon-192.png">
 
@@ -40,114 +38,138 @@
     :root{
       --bg:#ffffff; --text:#101320; --muted:#5d6470;
       --primary:#0b5cff; --primary-2:#083db3;
-      --card:#f6f8ff; --line:#e8ecf8
+      --card:#f6f8ff; --line:#e8ecf8;
+      --radius:18px;
     }
 
     *{ box-sizing:border-box }
     html,body{
       margin:0; padding:0;
       font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Arial,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
-      color:var(--text); background:var(--bg)
+      color:var(--text); background:var(--bg);
+      scroll-behavior:smooth;
     }
     a{ color:inherit; text-decoration:none }
     .container{ max-width:1100px; margin:0 auto; padding:0 20px }
 
+    /* 헤더 */
     header{
       position:sticky; top:0; z-index:50;
       border-bottom:1px solid var(--line);
       background:rgba(255,255,255,.85);
-      background: color-mix(in oklab, white 70%, transparent);
+      background: color-mix(in oklab, white 72%, transparent);
       backdrop-filter:saturate(150%) blur(8px);
     }
     .nav{ display:flex; align-items:center; justify-content:space-between; height:72px }
     .brand{ display:flex; gap:12px; align-items:center }
     .brand img{ height:60px; width:auto }
-    .brand h1{ font-size:20px; margin:0; font-weight:700 }
+    .brand h1{ font-size:20px; margin:0; font-weight:700; letter-spacing:-0.2px }
     nav ul{ display:flex; gap:18px; list-style:none; margin:0; padding:0 }
     nav a{ padding:8px 10px; border-radius:10px; font-weight:500 }
     nav a:hover{ background:var(--card) }
 
-    .hero{ padding:72px 0 56px }
-    .hero h2{ font-size:40px; line-height:1.15; margin:0 0 16px; word-break:keep-all }
-    .hero p{ color:var(--muted); font-size:18px; margin:0 0 28px }
-    .hero .cta{ display:flex; gap:12px }
-    .btn{ display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:14px; border:1px solid var(--line); background:#fff; font-weight:600 }
-    .btn.primary{ background:var(--primary); border-color:var(--primary); color:#fff }
+    /* 히어로 */
+    .hero{
+      padding:84px 0 60px;
+      background:
+        radial-gradient(1200px 400px at 20% -10%, #eaf0ff 0%, #fff 60%) no-repeat;
+      border-bottom:1px solid var(--line);
+    }
+    .hero h2{
+      font-size:clamp(32px, 4.2vw, 44px);
+      line-height:1.15; margin:0 0 16px; word-break:keep-all;
+      letter-spacing:-0.3px;
+    }
+    .hero p{ color:var(--muted); font-size:18px; margin:0 0 30px; max-width:48ch }
+    .hero .cta{ display:flex; gap:12px; flex-wrap:wrap }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 18px; border-radius:14px;
+      border:1px solid var(--line); background:#fff; font-weight:700;
+      transition:transform .05s ease, box-shadow .2s ease, filter .15s ease;
+    }
+    .btn.primary{
+      background:var(--primary); border-color:var(--primary); color:#fff;
+      box-shadow:0 6px 18px rgba(11,92,255,.18);
+    }
+    .btn:hover{ filter:brightness(1.02) }
+    .btn:active{ transform:translateY(1px) }
 
+    /* 섹션/카드 */
     section{ scroll-margin-top:80px }
-    .section{ padding:64px 0; border-top:1px solid var(--line) }
+    .section{ padding:72px 0; border-top:1px solid var(--line) }
     .grid{ display:grid; gap:18px }
     @media (min-width:900px){ .grid.cols-3{ grid-template-columns:repeat(3,1fr) } }
 
-    .card{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px }
-    .card h3{ margin:0 0 8px; font-size:18px }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 8px 24px rgba(10,30,120,.06);
+      transition: box-shadow .25s ease, transform .05s ease;
+    }
+    .card:hover{ box-shadow:0 12px 30px rgba(10,30,120,.10) }
+    .card h3{ margin:0 0 8px; font-size:18px; letter-spacing:-0.2px }
     .card p{ margin:0; color:var(--muted) }
 
-    .pill{ display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; background:#fff; border:1px solid var(--line); color:var(--muted); margin-right:6px }
+    .pill{
+      display:inline-block; font-size:12px; padding:6px 10px;
+      border-radius:999px; background:#fff; border:1px solid var(--line);
+      color:var(--muted); margin-right:6px
+    }
 
-    footer{ padding:36px 0; border-top:1px solid var(--line); color:var(--muted) }
+    footer{ padding:40px 0; border-top:1px solid var(--line); color:var(--muted) }
     .mini{ font-size:13px }
-    .shadow{ box-shadow:0 12px 30px rgba(0,12,120,.08) }
-    .spacer-1{ height:12px } .spacer-2{ height:24px }
+    .emoji{font-size:1.05em;vertical-align:-0.15em;margin-right:.35em}
 
-    /* === 모바일(≤640px) 여백/정렬/메뉴배치 보강 === */
+    /* ===== 모바일(≤640px) ===== */
     @media (max-width:640px){
-      /* 헤더/본문/히어로 좌우를 동일한 선으로 정렬 */
+      /* 좌우 정렬을 모든 영역에서 동일화 */
       header .container{
-        padding-left:  calc(clamp(28px, 7vw, 36px) + env(safe-area-inset-left));
-        padding-right: calc(clamp(28px, 7vw, 36px) + env(safe-area-inset-right));
+        padding-left:  calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-left));
+        padding-right: calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-right));
       }
       .container{
-        padding-left:  calc(clamp(28px, 7vw, 36px) + env(safe-area-inset-left));
-        padding-right: calc(clamp(28px, 7vw, 36px) + env(safe-area-inset-right));
+        padding-left:  calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-left));
+        padding-right: calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-right));
       }
 
-      /* 브랜드 위, 메뉴는 바로 아래 줄 */
+      /* 브랜드 위, 메뉴 아래 */
       .nav{
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-        height: auto;
-        padding: 10px 0;
+        flex-direction: column; align-items: flex-start;
+        gap: 6px; height: auto; padding: 10px 0;
       }
       .brand img{ height:40px } .brand h1{ font-size:16px }
-
       header nav{ width:100% }
       header nav ul{
-        display:flex; flex-wrap:wrap;
-        column-gap:16px; row-gap:8px;
+        display:flex; flex-wrap:wrap; column-gap:16px; row-gap:8px;
         margin:0; padding:4px 0 0;
       }
       header nav a{
-        white-space:nowrap;         /* 메뉴 명칭 단어 중간 줄바꿈 방지 */
-        word-break:keep-all;
-        padding:6px 0;
-        display:inline-block;
+        white-space:nowrap; word-break:keep-all;
+        padding:6px 0; display:inline-block;
       }
 
-      /* 히어로: 상단 여백 유지, 좌우는 본문과 동일 값 */
+      /* 히어로는 본문과 동일 좌우, 상하 여백만 살짝 */
       .hero.container{
-        padding-left:  calc(clamp(28px, 7vw, 36px) + env(safe-area-inset-left));
-        padding-right: calc(clamp(28px, 7vw, 36px) + env(safe-area-inset-right));
-        padding-top:68px; padding-bottom:40px;
+        padding-left:  calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-left));
+        padding-right: calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-right));
+        padding-top:68px; padding-bottom:44px;
       }
-      .hero h2{
-        font-size:clamp(22px, 6.2vw, 32px);
-        line-height:1.28; word-break:keep-all;
-        max-width:22ch;
-      }
+      .hero h2{ font-size: clamp(24px, 6.2vw, 32px); line-height:1.28; max-width:22ch }
       .hero p{ font-size:15px; max-width:36ch; margin-top:10px }
-      .hero .cta{ gap:14px }
       .btn{ padding:14px 18px }
+      .hero .cta{ gap:14px }
     }
 
     /* 초소형(≤380px): 버튼 세로 쌓기 */
     @media (max-width:380px){
       .hero .cta{ flex-direction:column }
-      .hero .cta .btn{ width:100%; justify-content:center }
+      .hero .cta .btn{ width:100% }
     }
 
-    /* 태블릿 좁은 폭(600~899px): 카드 2열 */
+    /* 태블릿(600~899px): 카드 2열 */
     @media (min-width:600px) and (max-width:899px){
       .grid.cols-3{ grid-template-columns:repeat(2,1fr) }
     }
@@ -156,6 +178,7 @@
   </style>
 </head>
 <body>
+  <!-- 헤더 -->
   <header>
     <div class="container nav">
       <div class="brand">
@@ -164,106 +187,113 @@
       </div>
       <nav aria-label="주 메뉴">
         <ul>
-          <li><a href="#about">회사소개</a></li>
-          <li><a href="#services">사업분야</a></li>
-          <li><a href="#rnd">기술연구</a></li>
-          <li><a href="#careers">인재채용</a></li>
+          <li><a href="#about"><span class="emoji" aria-hidden="true">🏢</span>회사소개</a></li>
+          <li><a href="#services"><span class="emoji" aria-hidden="true">🛠️</span>사업분야</a></li>
+          <li><a href="#rnd"><span class="emoji" aria-hidden="true">🔬</span>기술연구</a></li>
+          <li><a href="#careers"><span class="emoji" aria-hidden="true">👥</span>인재채용</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- 히어로 -->
   <main>
     <section class="hero container">
       <h2>수자원·방재 분야의 <span style="color:var(--primary)">정확한 해석</span>과 <span style="color:var(--primary)">지속 가능한 설계</span></h2>
       <p>하천기본계획에서 재해영향평가까지 — 데이터 기반 해석과 현장성 있는 솔루션으로 안전한 공간을 만듭니다.</p>
       <div class="cta">
-        <a class="btn primary shadow" href="#services">사업분야 보기</a>
-        <a class="btn" href="#contact">문의하기</a>
+        <a class="btn primary" href="#services"><span class="emoji" aria-hidden="true">📘</span>사업분야 보기</a>
+        <a class="btn" href="#contact"><span class="emoji" aria-hidden="true">✉️</span>문의하기</a>
       </div>
     </section>
 
+    <!-- 회사소개 -->
     <section id="about" class="section">
       <div class="container">
-        <h2>회사소개</h2>
+        <h2><span class="emoji" aria-hidden="true">🏢</span>회사소개</h2>
         <p class="mini">(주)해강엔지니어링은 수자원 및 방재 전문 엔지니어링 기업으로서, 과학적 분석과 축적된 실무 경험을 바탕으로 공공과 민간의 다양한 프로젝트를 수행합니다.</p>
         <div class="card" style="margin-top:14px">
-          <span class="pill">수자원분야</span>
-          <span class="pill">방재분야</span>
+          <span class="pill"><span class="emoji" aria-hidden="true">💧</span>수자원분야</span>
+          <span class="pill"><span class="emoji" aria-hidden="true">🛡️</span>방재분야</span>
           <p style="margin-top:10px;color:var(--muted)">주요 서비스: 하천기본계획, 하천환경정비사업 실시설계, 재해영향평가, 자연재해저감종합계획, 비상대처계획수립</p>
         </div>
       </div>
     </section>
 
+    <!-- 사업분야 -->
     <section id="services" class="section">
       <div class="container">
-        <h2>사업분야</h2>
+        <h2><span class="emoji" aria-hidden="true">🛠️</span>사업분야</h2>
         <div class="grid cols-3" style="margin-top:14px">
           <article class="card">
-            <h3>하천기본계획</h3>
-            <p>유역 분석, 홍수량 및 홍수위 산정, 하천의 정비·보전 계획 수립 등을 통합적으로 수행합니다.</p>
+            <h3><span class="emoji" aria-hidden="true">🗺️</span>하천기본계획</h3>
+            <p>유역 분석, 홍수량·홍수위 산정, 정비·보전 계획 수립 등을 통합적으로 수행합니다.</p>
           </article>
           <article class="card">
-            <h3>하천환경정비사업 실시설계</h3>
-            <p>수리·수문 해석 기반의 친수·생태·치수 기능을 고려한 실시설계를 수행합니다.</p>
+            <h3><span class="emoji" aria-hidden="true">🏞️</span>하천환경정비사업 실시설계</h3>
+            <p>수리·수문 해석 기반으로 친수·생태·치수 기능을 고려한 실시설계를 제공합니다.</p>
           </article>
           <article class="card">
-            <h3>재해영향평가</h3>
-            <p>개발사업으로 인한 재해 유발 요인을 정량 분석하고 저감 대책을 제시합니다.</p>
+            <h3><span class="emoji" aria-hidden="true">📑</span>재해영향평가</h3>
+            <p>개발사업으로 인한 재해 유발 요인을 정량 분석하고 효과적인 저감 대책을 제시합니다.</p>
           </article>
           <article class="card">
-            <h3>자연재해저감종합계획</h3>
-            <p>재해 위험도를 분석하여 구조·비구조적 대책을 로드맵으로 제시합니다.</p>
+            <h3><span class="emoji" aria-hidden="true">🧭</span>자연재해저감종합계획</h3>
+            <p>지역 재해 위험도를 분석하여 구조·비구조적 대책을 로드맵으로 제시합니다.</p>
           </article>
           <article class="card">
-            <h3>비상대처계획 수립</h3>
-            <p>위기 시나리오별 대응 체계를 구축하고 훈련·점검 프로세스를 구축축합니다.</p>
+            <h3><span class="emoji" aria-hidden="true">🚨</span>비상대처계획 수립</h3>
+            <p>위기 시나리오별 대응 체계를 구축하고 훈련·점검 프로세스를 설계합니다.</p>
           </article>
           <article class="card">
-            <h3>기타 컨설팅</h3>
-            <p>AI를 활용한 수리·수문 모델링, GIS/원격탐사 기반 분석, 데이터 구축 등.</p>
+            <h3><span class="emoji" aria-hidden="true">💡</span>기타 컨설팅</h3>
+            <p>AI 기반 수리·수문 모델링, GIS/원격탐사 분석, 데이터 파이프라인 구축 등.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- 기술연구 -->
     <section id="rnd" class="section">
       <div class="container">
-        <h2>기술연구</h2>
+        <h2><span class="emoji" aria-hidden="true">🔬</span>기술연구</h2>
         <div class="card">
-          <h3>R&D 방향</h3>
-          <p>HEC-RAS/HEC-HMS 기반 수리·수문 모델링 고도화, 레이더강우·KMA API 활용, 머신러닝 기반 위험도 지도화 등 내부 기술자산을 연구·개발하고 있습니다.</p>
+          <h3>R&amp;D 방향</h3>
+          <p>HEC-RAS/HEC-HMS 고도화, 레이더강우·KMA API 활용, 머신러닝 기반 위험도 지도화 등 핵심 기술자산을 연구·개발하고 있습니다.</p>
         </div>
       </div>
     </section>
 
+    <!-- 인재채용 -->
     <section id="careers" class="section">
       <div class="container">
-        <h2>인재채용</h2>
+        <h2><span class="emoji" aria-hidden="true">👥</span>인재채용</h2>
         <div class="card">
-          <p>수자원·방재 분야의 문제를 해결할 신입/경력 임직원을 모집합니다. 채용 공고는 본 페이지에서 수시 업데이트됩니다.</p>
+          <p>수자원·방재 분야의 문제를 데이터로 해결할 동료를 찾습니다. 채용 공고는 본 페이지에서 수시 업데이트됩니다.</p>
           <ul>
-            <li class="mini">모집 분야: 수자원분야 — 경력직 ○명(직급무관), 신입사원 ○명</li>
-            <li class="mini">지원 방법: 이력서·포트폴리오 이메일 제출(haegang2022@kakao.com)</li>
+            <li class="mini"><span class="emoji" aria-hidden="true">👩‍💼</span>모집 분야: 수자원분야 — 경력직 ○명(직급무관), 신입사원 ○명</li>
+            <li class="mini"><span class="emoji" aria-hidden="true">📥</span>지원 방법: 이력서·포트폴리오 이메일 제출(haegang2022@kakao.com)</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- 문의 -->
     <section id="contact" class="section">
       <div class="container">
-        <h2>문의하기</h2>
+        <h2><span class="emoji" aria-hidden="true">✉️</span>문의하기</h2>
         <div class="card">
           <address class="mini" style="font-style:normal">
-            (주)해강엔지니어링 대표이사 박상순<br>
-            본사 : 경기도 의왕시 광진말로 54, 의왕스마트시티퀀텀 제10층 제A1007<br>
-            관리자이메일: <a href="mailto:bycho@kakao.com">bycho@kakao.com</a>
+            <span class="emoji" aria-hidden="true">🏢</span>(주)해강엔지니어링 대표이사 박상순<br>
+            <span class="emoji" aria-hidden="true">📍</span>본사 : 경기도 의왕시 광진말로 54, 의왕스마트시티퀀텀 제10층 제A1007<br>
+            <span class="emoji" aria-hidden="true">📧</span>관리자이메일: <a href="mailto:bycho@kakao.com">bycho@kakao.com</a>
           </address>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- 푸터 -->
   <footer>
     <div class="container">
       <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
@@ -277,7 +307,7 @@
     // 푸터 연도 자동 갱신
     document.getElementById('yy').textContent = new Date().getFullYear();
 
-    // 부드러운 스크롤
+    // (참고) CSS로 smooth scroll을 켰지만, 일부 구형 브라우저를 위한 보강
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href');
