@@ -200,6 +200,7 @@
           <li><a href="#services"><span class="emoji" aria-hidden="true">🛠️</span>사업분야</a></li>
           <li><a href="#rnd"><span class="emoji" aria-hidden="true">🔬</span>기술연구</a></li>
           <li><a href="#careers"><span class="emoji" aria-hidden="true">👥</span>인재채용</a></li>
+          <li><a href="#board"><span class="emoji" aria-hidden="true">🧾</span>게시판</a></li>
         </ul>
       </nav>
     </div>
@@ -287,6 +288,25 @@
       </div>
     </section>
 
+    <!-- 게시판 -->
+    <section id="board" class="section">
+      <div class="container">
+        <h2><span class="emoji" aria-hidden="true">🧾</span>게시판</h2>
+        <div class="card">
+          <p class="mini" style="margin-bottom:12px">문의·의견을 남겨주세요. GitHub 계정으로 로그인하여 작성됩니다.</p>
+          <!-- Utterances (GitHub Issues 기반 댓글/게시판) -->
+          <script src="https://utteranc.es/client.js"
+                  repo="haegangeng/haegangeng.github.io"
+                  issue-term="url"
+                  label="board"
+                  theme="preferred-color-scheme"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+      </div>
+    </section>
+
     <!-- 문의 -->
     <section id="contact" class="section">
       <div class="container">
@@ -316,7 +336,7 @@
     // 푸터 연도 자동 갱신
     document.getElementById('yy').textContent = new Date().getFullYear();
 
-    // (참고) CSS로 smooth scroll을 켰지만, 일부 구형 브라우저를 위한 보강
+    // 부드러운 스크롤 (구형 브라우저 보강)
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href');
