@@ -3,16 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>(주)해강엔지니어링 | 수자원·방재 전문 엔지니어링</title>
+  <meta name="description" content="(주)해강엔지니어링 — 하천·소하천 기본계획 및 실시설계, 재해영향평가(재평/소규모재해영향평가), 자연재해저감종합계획, 풍수해 생활권 정비, AI·API 활용 분석평가 용역" />
+  <meta name="keywords" content="하천, 소하천, 하천기본계획, 하천실시설계, 기본계획, 실시설계, 재해영향평가, 재평, 소규모재해영향평가, 소규모재평, 방재, 재해, 분석평가, 분석평가용역, 소규모공공시설, 풍수해, 풍수해생활권, 자연재해, 자연재해저감종합계획, AI, AI 활용, API, API 활용" />
+  <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://haegangeng.github.io/" />
-  <meta name="description" content="(주)해강엔지니어링 — 하천기본계획, 하천환경정비사업 실시설계, 재해영향평가, 자연재해저감종합계획, 비상대처계획수립" />
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <!-- (선택) 크롤러가 힌트를 얻도록 사이트맵 링크 -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://haegangeng.github.io/sitemap.xml" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="(주)해강엔지니어링" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:title" content="(주)해강엔지니어링" />
-  <meta property="og:description" content="수자원·방재 전문 엔지니어링" />
+  <meta property="og:description" content="수자원·방재 전문 엔지니어링 — 하천/소하천 기본계획·실시설계, 재해영향평가, 자연재해저감종합계획, 풍수해 생활권, AI·API 활용 분석평가" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://haegangeng.github.io/" />
   <meta property="og:image" content="https://haegangeng.github.io/assets/og-haegang-1200x630.jpg" />
@@ -23,12 +30,51 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="(주)해강엔지니어링" />
-  <meta name="twitter:description" content="수자원·방재 전문 엔지니어링" />
+  <meta name="twitter:description" content="수자원·하천·방재분야 전문회사" />
   <meta name="twitter:image" content="https://haegangeng.github.io/assets/og-haegang-1200x630.jpg" />
 
   <meta name="theme-color" content="#0b5cff" />
-  <link rel="icon" href="assets/favicon.ico">
-  <link rel="apple-touch-icon" href="assets/icon-192.png">
+
+  <!-- 구조화 데이터 (Organization + WebSite + SearchAction) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "해강엔지니어링",
+        "url": "https://haegangeng.github.io/",
+        "logo": "https://haegangeng.github.io/assets/haegang-logo.png",
+        "email": "bycho@kakao.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "KR",
+          "addressRegion": "경기도",
+          "addressLocality": "의왕시",
+          "streetAddress": "광진말로 54, 의왕스마트시티퀀텀 제10층 제A1007"
+        },
+        "keywords": [
+          "하천","소하천","하천기본계획","하천실시설계","기본계획","실시설계",
+          "재해영향평가","재평","소규모재해영향평가","소규모재평",
+          "방재","재해","분석평가","분석평가용역","소규모공공시설",
+          "풍수해","풍수해생활권","자연재해","자연재해저감종합계획",
+          "AI","AI 활용","API","API 활용"
+        ],
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "name": "해강엔지니어링",
+        "url": "https://haegangeng.github.io/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://haegangeng.github.io/search?q={query}",
+          "query-input": "required name=query"
+        }
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +87,6 @@
       --card:#f6f8ff; --line:#e8ecf8;
       --radius:18px;
     }
-
     *{ box-sizing:border-box }
     html,body{
       margin:0; padding:0;
@@ -67,7 +112,7 @@
     nav ul{ display:flex; gap:18px; list-style:none; margin:0; padding:0 }
     nav a{
       padding:8px 10px; border-radius:10px; font-weight:500;
-      display:inline-flex; align-items:center; min-height:36px;  /* 터치 타깃 ↑ */
+      display:inline-flex; align-items:center; min-height:36px;
     }
     nav a:hover{ background:var(--card) }
 
@@ -80,9 +125,9 @@
     .hero h2{
       font-size:clamp(32px, 4.2vw, 44px);
       line-height:1.15; margin:0 0 16px; word-break:keep-all;
-      letter-spacing:-0.3px; text-wrap:balance; /* 균형 줄바꿈 */
+      letter-spacing:-0.3px; text-wrap:balance;
     }
-    .hero p{ color:var(--muted); font-size:18px; margin:0 0 30px; max-width:48ch }
+    .hero p{ color:var(--muted); font-size:18px; margin:0 0 30px; max-width:58ch }
     .hero .cta{ display:flex; gap:12px; flex-wrap:wrap }
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
@@ -122,7 +167,7 @@
     }
 
     footer{ padding:40px 0; border-top:1px solid var(--line); color:var(--muted) }
-    .mini{ font-size:13px; line-height:1.6 }  /* 행간 보강 */
+    .mini{ font-size:13px; line-height:1.6 }
     .emoji{ font-size:1.05em; vertical-align:-0.15em; margin-right:.35em }
 
     /* 포커스 접근성 */
@@ -134,7 +179,6 @@
 
     /* ===== 모바일(≤640px) ===== */
     @media (max-width:640px){
-      /* 좌우 정렬을 모든 영역에서 동일화 (요청하신 여백 값 유지: 24~32px) */
       header .container{
         padding-left:  calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-left));
         padding-right: calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-right));
@@ -143,8 +187,6 @@
         padding-left:  calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-left));
         padding-right: calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-right));
       }
-
-      /* 브랜드 위, 메뉴 아래 */
       .nav{
         flex-direction: column; align-items: flex-start;
         gap: 6px; height: auto; padding: 10px 0;
@@ -159,30 +201,23 @@
         white-space:nowrap; word-break:keep-all;
         padding:6px 0; display:inline-flex;
       }
-
-      /* 히어로는 본문과 동일 좌우, 상하 여백(68/44) 유지 */
       .hero.container{
         padding-left:  calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-left));
         padding-right: calc(clamp(24px, 7vw, 32px) + env(safe-area-inset-right));
         padding-top:68px; padding-bottom:44px;
       }
-      .hero h2{ font-size: clamp(24px, 6.2vw, 32px); line-height:1.28; max-width:22ch }
-      .hero p{ font-size:15px; max-width:36ch; margin-top:10px }
+      .hero h2{ font-size: clamp(24px, 6.2vw, 32px); line-height:1.28; max-width:24ch }
+      .hero p{ font-size:15px; max-width:38ch; margin-top:10px }
       .btn{ padding:14px 18px }
       .hero .cta{ gap:14px }
     }
-
-    /* 초소형(≤380px): 버튼 세로 쌓기 */
     @media (max-width:380px){
       .hero .cta{ flex-direction:column }
       .hero .cta .btn{ width:100% }
     }
-
-    /* 태블릿(600~899px): 카드 2열 */
     @media (min-width:600px) and (max-width:899px){
       .grid.cols-3{ grid-template-columns:repeat(2,1fr) }
     }
-
     html,body{ overflow-x:hidden }
   </style>
 </head>
@@ -191,7 +226,7 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <img src="assets/haegang-logo.png" alt="해강엔지니어링 로고" />
+        <img src="assets/haegang-logo.png" alt="해강엔지니어링 로고" loading="lazy" />
         <h1>(주)해강엔지니어링</h1>
       </div>
       <nav aria-label="주 메뉴">
@@ -209,8 +244,8 @@
   <!-- 히어로 -->
   <main>
     <section class="hero container">
-      <h2>수자원·방재 분야의 <span style="color:var(--primary)">정확한 해석</span>과 <span style="color:var(--primary)">지속 가능한 설계</span></h2>
-      <p>하천기본계획에서 재해영향평가까지 — 데이터 기반 해석과 현장성 있는 솔루션으로 안전한 공간을 만듭니다.</p>
+      <h2>수자원·하천·방재 분야의 문제를 <span style="color:var(--primary)">합리적으로 분석</span>하고 <span style="color:var(--primary)">명확하게 해결</span></h2>
+      <p>하천·소하천 기본계획 및 실시설계, 재해영향평가(재해영향성검토/재해영향평가), 자연재해저감종합계획, 풍수해생활권 정비사업 등 — AI/ API를  활용한 데이터 기반 <strong>분석평가</strong>실시</p>
       <div class="cta">
         <a class="btn primary" href="#services"><span class="emoji" aria-hidden="true">📘</span>사업분야 보기</a>
         <a class="btn" href="#contact"><span class="emoji" aria-hidden="true">✉️</span>문의하기</a>
@@ -221,11 +256,15 @@
     <section id="about" class="section">
       <div class="container">
         <h2><span class="emoji" aria-hidden="true">🏢</span>회사소개</h2>
-        <p class="mini">(주)해강엔지니어링은 수자원 및 방재 전문 엔지니어링 기업으로서, 과학적 분석과 축적된 실무 경험을 바탕으로 공공과 민간의 다양한 프로젝트를 수행합니다.</p>
+        <p class="mini">(주)해강엔지니어링은 수자원 및 방재 전문 엔지니어링 기업으로서, AI/ API를 적극 활용하여 과학적 분석과 축적된 실무 경험을 바탕으로 공공과 민간의 다양한 프로젝트를 수행합니다.</p>
         <div class="card" style="margin-top:14px">
           <span class="pill"><span class="emoji" aria-hidden="true">💧</span>수자원분야</span>
           <span class="pill"><span class="emoji" aria-hidden="true">🛡️</span>방재분야</span>
-          <p style="margin-top:10px;color:var(--muted)">주요 서비스: 하천기본계획, 하천환경정비사업 실시설계, 재해영향평가, 자연재해저감종합계획, 비상대처계획수립</p>
+          <p style="margin-top:10px;color:var(--muted)">
+            주요 서비스: <strong>하천기본계획</strong>, <strong>하천실시설계</strong>, <strong>재해영향평가(재평/소규모재해영향평가)</strong>, 
+            <strong>자연재해저감종합계획</strong>, <strong>풍수해생활권</strong>, <strong>소규모공공시설</strong> 
+            <strong>AI·API 활용 분석평가 용역</strong>
+          </p>
         </div>
       </div>
     </section>
@@ -237,28 +276,37 @@
         <div class="grid cols-3" style="margin-top:14px">
           <article class="card">
             <h3><span class="emoji" aria-hidden="true">🗺️</span>하천기본계획</h3>
-            <p>유역 분석, 홍수량·홍수위 산정, 정비·보전 계획 수립 등을 통합적으로 수행합니다.</p>
+            <p>유역 분석, 홍수량·홍수위 산정, 정비·보전 계획 수립 등을 통합적으로 수행</p>
           </article>
           <article class="card">
             <h3><span class="emoji" aria-hidden="true">🏞️</span>하천환경정비사업 실시설계</h3>
-            <p>수리·수문 해석 기반으로 친수·생태·치수 기능을 고려한 실시설계를 제공합니다.</p>
+            <p>수리·수문 해석 기반으로 친수·생태·치수 기능을 고려한 하천 실시설계를 수행</p>
           </article>
           <article class="card">
             <h3><span class="emoji" aria-hidden="true">📑</span>재해영향평가</h3>
-            <p>개발사업으로 인한 재해 유발 요인을 정량 분석하고 효과적인 저감 대책을 제시합니다.</p>
+            <p>개발사업으로 인한 재해 유발 요인을 정량 분석하고 효과적인 저감 대책을 제시</p>
           </article>
           <article class="card">
             <h3><span class="emoji" aria-hidden="true">🧭</span>자연재해저감종합계획</h3>
-            <p>지역 재해 위험도를 분석하여 구조·비구조적 대책을 로드맵으로 제시합니다.</p>
+            <p>재해위험도를 분석하여 구조·비구조적 대책을 로드맵으로 제시</p>
           </article>
           <article class="card">
             <h3><span class="emoji" aria-hidden="true">🚨</span>비상대처계획 수립</h3>
             <p>위기 시나리오별 대응 체계를 구축하고 훈련·점검 프로세스를 설계합니다.</p>
           </article>
           <article class="card">
-            <h3><span class="emoji" aria-hidden="true">💡</span>기타 컨설팅</h3>
-            <p>AI 기반 수리·수문 모델링, GIS/원격탐사 분석, 데이터 파이프라인 구축 등.</p>
+            <h3><span class="emoji" aria-hidden="true">💡</span>AI·API 활용 분석평가</h3>
+            <p>AI/머신러닝과 공공 API를 활용한 데이터 분석으로 보다 합리적인 분석결과 제공</p>
           </article>
+        </div>
+
+        <!-- 키워드 강조 섹션(가벼운 내부링크/용어 노출) -->
+        <div class="card" style="margin-top:18px">
+          <strong class="mini">관련 키워드:</strong>
+          <p class="mini" style="margin-top:6px;color:var(--muted)">
+            하천 · 소하천 · 하천기본계획 · 하천실시설계 · 기본계획 · 실시설계 · 재해영향평가(재해영향성검토/재해영향평가) ·
+            방재 · 자연재해저감종합계획 · 풍수해 생활권 · 소규모공공시설 · 분석평가 용역 · AI 활용 · API 활용
+          </p>
         </div>
       </div>
     </section>
@@ -269,7 +317,7 @@
         <h2><span class="emoji" aria-hidden="true">🔬</span>기술연구</h2>
         <div class="card">
           <h3>R&amp;D 방향</h3>
-          <p>HEC-RAS/HEC-HMS 고도화, 레이더강우·KMA API 활용, 머신러닝 기반 위험도 지도화 등 핵심 기술자산을 연구·개발하고 있습니다.</p>
+          <p>HEC-RAS/HEC-HMS 고도화, 레이더강우·KMA API 활용, 머신러닝 기반 위험도 지도화 등 핵심 기술자산을 연구·개발</p>
         </div>
       </div>
     </section>
@@ -279,7 +327,7 @@
       <div class="container">
         <h2><span class="emoji" aria-hidden="true">👥</span>인재채용</h2>
         <div class="card">
-          <p>수자원·방재 분야의 문제를 데이터로 해결할 동료를 찾습니다. 채용 공고는 본 페이지에서 수시 업데이트됩니다.</p>
+          <p>수자원·방재 분야의 문제를 함께 고민할 임/직원을 모집합니다. 채용 공고는 본 페이지에서 수시 업데이트됩니다.</p>
           <ul>
             <li class="mini"><span class="emoji" aria-hidden="true">👩‍💼</span>모집 분야: 수자원분야 — 경력직 ○명(직급무관), 신입사원 ○명</li>
             <li class="mini"><span class="emoji" aria-hidden="true">📥</span>지원 방법: 이력서·포트폴리오 이메일 제출(haegang2022@kakao.com)</li>
@@ -327,7 +375,7 @@
     <div class="container">
       <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
         <span class="mini">© <span id="yy"></span> Haegang Engineering Co., Ltd. All rights reserved.</span>
-        <span class="mini">사업자정보 · 개인정보처리방침 · 이메일무단수집거부</span>
+        <span class="mini"><a href="/robots.txt">robots.txt</a> · <a href="/sitemap.xml">sitemap.xml</a> · 사업자정보 · 개인정보처리방침 · 이메일무단수집거부</span>
       </div>
     </div>
   </footer>
